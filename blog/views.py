@@ -30,15 +30,3 @@ def post_detail(request, slug):
         "blog/post_detail.html",
         {"post": post},
     )
-
-class about_me(request):
-    """
-    Renders the About page
-    """
-    about = About.objects.all().order_by('-updated_on').first()
-
-    return render(
-        request,
-        "about/about.html",
-        {"about": about},
-    )
